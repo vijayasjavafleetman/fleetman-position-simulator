@@ -1,6 +1,6 @@
 ---
   - hosts: localhost
-    become: false
+    become: true
     vars:
       appName: "positionsimulator"
     tasks:

@@ -2,7 +2,7 @@
   - hosts: localhost
     vars:
       appName: "positionsimulator"
-    become: false
+    become: true
     tasks:
     - name: clean the workspace
       command: "rm -f *"
