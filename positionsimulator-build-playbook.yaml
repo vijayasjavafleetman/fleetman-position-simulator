@@ -27,6 +27,13 @@
       command: "docker tag {{ appName }} {{ tag }}"
     - name: push the name to registry
       command: "docker push {{ tag }}"
+    - name: Build an image and push it to a private repo
+      docker_image:
+        build:
+          path: /home/ansadmin/jenkins/{{ appName }}/workspace
+        name: "{{ tag }}"
+        push: yes
+        source: build
     - name: cleaning
       command: "{{ item }}"
       with_items:
