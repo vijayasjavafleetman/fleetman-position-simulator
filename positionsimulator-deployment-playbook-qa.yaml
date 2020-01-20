@@ -5,7 +5,7 @@
     appName: "positionsimulator" 
     metaname: "position-simulator"
   become: true
-  user: ansadmin
+  user: root
   tasks: 
   - name: test dir
     command: "pwd"
