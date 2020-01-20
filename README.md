@@ -1,2 +1,3 @@
 # fleetman-position-simulator
 
+restart
