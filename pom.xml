@@ -4,7 +4,7 @@
 
 	<groupId>com.virtualpairprogrammers</groupId>
 	<artifactId>positionsimulator</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>positionsimulator</name>
@@ -27,7 +27,7 @@
    <connection>scm:git:git@github.com:vijayasjavafleetman/fleetman-position-simulator.git</connection>
    <url>git@github.com:vijayasjavafleetman/fleetman-position-simulator.git</url>
    <developerConnection>scm:git:git@github.com:vijayasjavafleetman/fleetman-position-simulator.git</developerConnection>
-  <tag>v0.0.3</tag>
+  <tag>HEAD</tag>
   </scm>
 
 <distributionManagement>
