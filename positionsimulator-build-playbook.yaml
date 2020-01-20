@@ -19,19 +19,20 @@
         password: "{{ ARTIFACTORY_PASSWD }}"
         extension: "jar"
         version: "{{ ARTIFACT_VERSION }}"
-    - name: Build an image and push it to a private repo
-      docker_image:
-        build:
-          path: /home/ansadmin/jenkins/{{ appName }}/workspace
-        name: "{{ tag }}"
-        push: yes
-        source: build
+    - name: building docker image
+      command: "docker build -t {{ appName }} ."
+      args:
+        chdir: "/home/ansadmin/jenkins/{{ appName }}/workspace"
+    - name: tag docker image
+      command: "docker tag {{ appName }} {{ tag }}"
+    - name: push the name to registry
+      command: "docker push {{ tag }}"
     - name: cleaning
       command: "{{ item }}"
       with_items:
        - "rm -f *"
        - "rm -rf *"
-       - "docker rmi {{ tag }}"
+       - "docker rmi {{ appName }} {{ tag }}"
        - "docker system prune -f -a"
       args:
         chdir: "/home/ansadmin/jenkins/{{ appName }}/workspace"
